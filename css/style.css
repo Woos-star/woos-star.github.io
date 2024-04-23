@@ -247,6 +247,43 @@ img {
   line-height: 1.8;
 }
 
+
+/*--------------------------------
+ Others
+---------------------------------*/
+.others-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: -50px;
+}
+
+.others-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 48%;
+  margin-bottom: 50px;
+}
+
+.others-img {
+  width: 60px;
+  height: auto;
+  margin-right: 20px;
+}
+
+.others-body {
+  flex: 1;
+}
+
+.others-name {
+  margin-bottom: 10px;
+}
+
+.others-text {
+  font-size: 14px;
+  line-height: 1.8;
+}
 /*--------------------------------
  About
 ---------------------------------*/
