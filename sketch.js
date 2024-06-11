@@ -7,7 +7,15 @@ let kerning = 1;
 let Text = "I never dreamed about success, I worked for it.; Do not try to be original, just try to be good.; Do not be afraid to give up the good to go for the great.; If you cannot fly then run. If you cannot run, then walk. And, if you cannot walk, then crawl, but whatever you do, you have to keep moving forward.";
 
 function preload() {
-  img = loadImage("images/3sekai.png"); 
+  img = loadImage("face.PNG", imageLoaded, imageLoadError);
+}
+
+function imageLoaded() {
+  console.log("Image loaded successfully");
+}
+
+function imageLoadError() {
+  console.error("Error loading image");
 }
 
 function setup() {
@@ -19,7 +27,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);  //refresh
+  background(255);
   lights();
   let x = 0;
   let y = spacing;
@@ -35,16 +43,15 @@ function draw() {
 
     let imgX = round(map(x, 0, width, 0, img.width));
     let imgY = round(map(y, 0, height, 0, img.height));
-    let c = img.get(imgX, imgY);  //pixel color
+    let c = img.get(imgX, imgY);
     let grayscale = round(red(c) * 0.2 + green(c) * 0.7 + blue(c) * 0.07);
 
     push();
-
     translate(x, y);
     let fontSize = map(grayscale, 0, 255, fontSizeMax, fontSizeMin);
     fontSize = max(fontSize, 1);
     textSize(fontSize);
-    fill(c);  //color
+    fill(c);
     let letter = Text.charAt(counter);
 
     let sizeScale = map(fontSize, fontSizeMin, fontSizeMax, 1, 0);
@@ -59,13 +66,13 @@ function draw() {
     x += letterWidth;
     pop();
 
-    if (x + letterWidth >= width) {  //over width reset
+    if (x + letterWidth >= width) {
       x = 0;
       y += spacing;
     }
 
     counter++;
-    if (counter >= Text.length) {  //first
+    if (counter >= Text.length) {
       counter = 0;
     }
   }
