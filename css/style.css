@@ -1,6 +1,6 @@
 body {
   font-family: "Montserrat","Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   letter-spacing: .05em;
   color: #333;
 }
@@ -547,12 +547,22 @@ img {
   .profile {
     display: block;
   }
+  .profile:hover {
+    transform: scale(1.05);
+  }
+  /* .profile-img {
+    width: 150px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  } */
+
   .profile-img {
     width: 150px;
     margin: 0 auto;
     margin-bottom: 25px;
+    border-radius: 50%;
+    transition: transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
   }
-
   .profile-body p {
     font-size: 14px;
     line-height: 1.7;
